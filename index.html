@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>hi, i am igor</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --bg: #f7f4f0;
+      --text: #1a1a1a;
+      --muted: #999;
+      --link-underline: #1a1a1a;
+      --font: 'DM Sans', sans-serif;
+      --size-body: 18px;
+      --size-label: 12px;
+      --size-header: 40px;
+    }
+
+    html {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      font-size: var(--size-body);
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+      padding: 48px 56px 80px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    /* ── Header ── */
+    header {
+      margin-bottom: 52px;
+    }
+
+    h1 {
+      font-size: var(--size-header);
+      font-weight: 400;
+      line-height: 1.15;
+      letter-spacing: -0.5px;
+    }
+
+    /* ── Main grid ── */
+    .grid {
+      display: grid;
+      grid-template-columns: 420px 1fr 340px;
+      gap: 0 48px;
+      align-items: start;
+    }
+
+    /* ── Left column ── */
+    .col-left {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .photo {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      display: block;
+      margin-bottom: 36px;
+      /* placeholder tint until real image is added */
+      background: #ddd;
+    }
+
+    .photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .links-group {
+      margin-bottom: 28px;
+    }
+
+    .links-label {
+      font-size: var(--size-label);
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-transform: lowercase;
+      margin-bottom: 6px;
+    }
+
+
+    .links-group a {
+      display: inline-block;
+      color: var(--text);
+      text-decoration: none;
+      line-height: 1.7;
+      position: relative;
+    }
+
+    .links-group .link-row {
+      display: block;
+    }
+
+    .links-group a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 1px;
+      width: 0;
+      height: 1px;
+      background: var(--text);
+      transition: width 0.2s ease;
+    }
+
+    .links-group a:hover::after {
+      width: 100%;
+    }
+
+    /* ── Middle column ── */
+    .col-mid {
+      padding-top: 2px;
+    }
+
+    .col-mid p {
+      margin-bottom: 24px;
+    }
+
+    .col-mid p:last-child {
+      margin-bottom: 0;
+    }
+
+    .col-mid a {
+      color: var(--text);
+      text-underline-offset: 3px;
+      text-decoration-thickness: 1px;
+    }
+
+    .col-mid a:hover {
+      opacity: 0.5;
+      transition: opacity 0.15s;
+    }
+
+    /* ── Right column ── */
+    .col-right {
+      padding-top: 2px;
+    }
+
+    .col-right p {
+      line-height: 1.7;
+    }
+
+    .experience-item {
+      margin-bottom: 6px;
+    }
+
+    .experience-item .role {
+      color: var(--text);
+    }
+
+    .awards {
+      margin-top: 24px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .grid {
+        grid-template-columns: 320px 1fr;
+        grid-template-rows: auto auto;
+      }
+
+      .col-right {
+        grid-column: 2;
+        grid-row: 1;
+        margin-bottom: 32px;
+      }
+
+      .col-mid {
+        grid-column: 2;
+        grid-row: 2;
+      }
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding: 36px 24px 60px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .col-right {
+        grid-column: 1;
+        grid-row: auto;
+        margin-top: 32px;
+      }
+
+      .col-mid {
+        grid-column: 1;
+        grid-row: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>hi, i am<br>igor</h1>
+  </header>
+
+  <main class="grid">
+
+    <!-- Left column -->
+    <div class="col-left">
+      <div class="photo">
+        <!-- Replace src with your actual photo path, e.g. src="photo.png" -->
+        <img src="photo.png" alt="igor" onerror="this.parentElement.style.background='#e0dbd4'" />
+      </div>
+
+      <div class="links-group">
+        <div class="links-label">professional</div>
+        <span class="link-row"><a href="https://www.linkedin.com/in/igor-ivanov-content/" target="_blank" rel="noopener">linkedin</a></span>
+        <span class="link-row"><a href="https://setka.ru/users/e25b86a6-e78e-4059-b494-7d98cb6ef6b6" target="_blank" rel="noopener">setka</a></span>
+        <span class="link-row"><a href="cv.pdf" target="_blank" rel="noopener">cv</a></span>
+      </div>
+
+      <div class="links-group">
+        <div class="links-label">elsewhere</div>
+        <span class="link-row"><a href="https://www.facebook.com/igesser" target="_blank" rel="noopener">facebook</a></span>
+        <span class="link-row"><a href="https://www.instagram.com/igesser/" target="_blank" rel="noopener">instagram</a></span>
+        <span class="link-row"><a href="https://t.me/remindmetowrite" target="_blank" rel="noopener">tg channel (rus)</a></span>
+      </div>
+    </div>
+
+    <!-- Middle column -->
+    <div class="col-mid">
+      <p>i build things from zero — teams, content operations, media channels — whatever a business needs to actually exist and work.</p>
+
+      <p>at setka, my team and i helped grow the platform to over 700,000 posts and thousands of active authors. along the way we launched several award-winning editorial channels — <a href="https://setka.ru/communities/018f8673-5cea-423b-8170-6d46bdd5fdcd" target="_blank" rel="noopener">samozvanec</a>, <a href="https://setka.ru/communities/018f94eb-fc2e-4386-a27e-c8076ae1a770" target="_blank" rel="noopener">neirabotai</a>, <a href="https://setka.ru/communities/0197e50d-0008-443f-a882-29e16b48d955" target="_blank" rel="noopener">naim-taim</a>.</p>
+
+      <p>at yandex practicum, we launched <a href="https://thecode.media/" target="_blank" rel="noopener">kod</a> and <a href="https://kinzhal.media" target="_blank" rel="noopener">kinzal</a> and published over 200 content pieces — articles and funnels — to show what a real career in tech actually looks like.</p>
+
+      <p>i care about figuring out the story a company should actually be telling, not the one they think they should. then building the structure so it keeps working without you holding it together.</p>
+
+      <p>if you need someone to help with media, content strategy, or communications — <a href="mailto:gesser4444@gmail.com">let's talk</a>.</p>
+    </div>
+
+    <!-- Right column -->
+    <div class="col-right">
+      <div class="experience-item">content director, setka, 2023 – current</div>
+      <div class="experience-item">head of content, yandex practicum, 2019–2023</div>
+      <div class="experience-item">creative group head, look at media, 2016–2019</div>
+      <div class="experience-item">copywriter, omd group, 2014–2016</div>
+      <div class="experience-item">pr manager, ikra, 2013–2014</div>
+      <div class="awards">tagline awards: bronze ×2, silver ×2</div>
+  
